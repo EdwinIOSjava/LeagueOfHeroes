@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            tools:src="@mipmap/ic_launcher"
+            android:id="@+id/hero_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop">
+        <!-- este hace que la iamgen se agrande hasta el tamaño XX-->
+
+
+        </ImageView>
+        <TextView
+            android:id="@+id/nameHero_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="nombre heroe"
+            android:textSize="20sp"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:background="@color/text_background"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="@string/hero_name"
+            >
+
+        </TextView>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

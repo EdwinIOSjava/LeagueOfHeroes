@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LeagueOfHeroes</string>
+    <string name="hero_name">hero_name</string>
+
 </resources>
