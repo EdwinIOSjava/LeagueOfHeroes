@@ -19,12 +19,11 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-            // le doys valores a las variables accediento por el ID a sus respectivos componentes
-            initComponents()
-          //  initListeners()
-
-
         }
+
+        // le doys valores a las variables accediento por el ID a sus respectivos componentes
+        initComponents()
+        //  initListeners()
     }
 
 

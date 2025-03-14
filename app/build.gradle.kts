@@ -36,6 +36,12 @@ android {
 }
 
 dependencies {
+    //picasso
+    implementation("com.squareup.picasso:picasso:2.8")
+    // retrofit
+    // Retrofit & GsonConverterFactory
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
