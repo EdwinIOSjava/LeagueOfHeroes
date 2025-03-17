@@ -1,4 +1,4 @@
-package com.example.leagueofheroes
+package com.example.leagueofheroes.data
 // en esta clase creamos el modelo de datos de la respuesta de la API
 class SuperHeroResponse (
     val response: String,
