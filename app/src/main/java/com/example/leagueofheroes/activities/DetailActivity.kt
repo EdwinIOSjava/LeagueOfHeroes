@@ -80,7 +80,6 @@ class DetailActivity : AppCompatActivity() {
         binding.biographyContentDetail.publisherTextView.text = superhero.biography.publisher
         binding.biographyContentDetail.placeOfBirthTextView.text = superhero.biography.placeOfBirth
         binding.biographyContentDetail.alignmentTextView.text = superhero.biography.alignment
-
         binding.biographyContentDetail.occupationTextView.text = superhero.work.occupation
         binding.biographyContentDetail.baseTextView.text = superhero.work.base
 
@@ -93,6 +92,8 @@ class DetailActivity : AppCompatActivity() {
         binding.appearanceContentDetail.heightTextView.text = superhero.appearance.getHeightCm()
 
         // Stats
+        binding.statsContentDetail.strengthProgressBar.progress=superhero.powerstats.strength
+
     }
 
 

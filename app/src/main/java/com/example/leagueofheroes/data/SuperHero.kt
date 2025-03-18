@@ -17,6 +17,7 @@ class SuperHeroResponse (
         val work: Work,
         val appearance: Appearance,
         val image: Image,
+        val powerstats: Powerstats
     )
 
 
@@ -48,5 +49,15 @@ class Appearance (
         return height[1]
     }
 }
+
+class Powerstats (
+
+    val intelligence: String,
+    val strength: String,
+    val speed: String,
+    val durability: String,
+    val power: String,
+    val combat: String
+)
 // en esta clase creamos el modelo de datos de la imagen osea la URL de la imagen
 class Image (val url: String)
