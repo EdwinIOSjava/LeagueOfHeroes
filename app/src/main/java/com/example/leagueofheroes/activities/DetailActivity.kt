@@ -11,7 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.leagueofheroes.R
 import com.example.leagueofheroes.data.SuperHero
-import com.example.leagueofheroes.data.SuperheroService
+import com.example.leagueofheroes.data.SuperHeroService
 import com.example.leagueofheroes.databinding.ActivityDetailBinding
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
@@ -49,18 +49,18 @@ class DetailActivity : AppCompatActivity() {
             when (menuItem.itemId) {
                 R.id.action_biography -> {
                     binding.appearanceContentDetail.root.visibility = View.GONE
-                    binding.appearanceContentDetail.root.visibility = View.GONE
+                    binding.statsContentDetail.root.visibility = View.GONE
                     binding.biographyContentDetail.root.visibility = View.VISIBLE
                 }
                 R.id.action_appearance -> {
-                    binding.appearanceContentDetail.root.visibility = View.GONE
+                    binding.statsContentDetail.root.visibility = View.GONE
                     binding.biographyContentDetail.root.visibility = View.GONE
                     binding.appearanceContentDetail.root.visibility = View.VISIBLE
                 }
                 R.id.action_stats -> {
                     binding.biographyContentDetail.root.visibility = View.GONE
                     binding.appearanceContentDetail.root.visibility = View.GONE
-                    binding.appearanceContentDetail.root.visibility = View.VISIBLE
+                    binding.statsContentDetail.root.visibility = View.VISIBLE
                 }
             }
             true
@@ -93,19 +93,24 @@ class DetailActivity : AppCompatActivity() {
 
         // Stats
         binding.statsContentDetail.strengthProgressBar.progress=superhero.powerstats.strength.toInt()
+        binding.statsContentDetail.intelligenceProgressBar.progress=superhero.powerstats.intelligence.toInt()
+        binding.statsContentDetail.speedProgressBar.progress=superhero.powerstats.speed.toInt()
+        binding.statsContentDetail.durabilityProgressBar.progress=superhero.powerstats.durability.toInt()
+        binding.statsContentDetail.powerProgressBar.progress=superhero.powerstats.power.toInt()
+
 
     }
 
 
 
 
-    fun getRetrofit(): SuperheroService {
+    fun getRetrofit(): SuperHeroService {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://www.superheroapi.com/api.php/7252591128153666/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        return retrofit.create(SuperheroService::class.java)
+        return retrofit.create(SuperHeroService::class.java)
     }
 
     fun getSuperheroById(id: String) {

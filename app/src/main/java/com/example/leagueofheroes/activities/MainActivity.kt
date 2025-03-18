@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.leagueofheroes.R
 import com.example.leagueofheroes.adapters.SuperHeroAdapter
 import com.example.leagueofheroes.data.SuperHero
-import com.example.leagueofheroes.data.SuperheroService
+import com.example.leagueofheroes.data.SuperHeroService
 import com.example.leagueofheroes.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = GridLayoutManager(this, 2)
 
-        searchSuperheroesByName("b")
+        searchSuperheroesByName("o")
 
 
     }
@@ -82,13 +82,13 @@ class MainActivity : AppCompatActivity() {
 
 
     // usamos retrofit para hacer la peticion a la API
-    fun getRetrofit(): SuperheroService {
+    fun getRetrofit(): SuperHeroService {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://www.superheroapi.com/api.php/7252591128153666/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        return retrofit.create(SuperheroService::class.java)
+        return retrofit.create(SuperHeroService::class.java)
     }
 
 

@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingEnd="20dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,17 +18,17 @@
             android:textAlignment="textEnd"
             android:layout_marginEnd="8dp">
 
-        </TextView>
+        </TextView><!--ahora ponemos las esquinas redondeadas del progres bar-->
         <ProgressBar
             android:id="@+id/strengthProgressBar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:background="#33F60000"
             android:max="100"
             android:progress="50"
-            android:background="#44F60000"
-            android:progressTint="#FF0000"
+            android:progressTint="#FF0000" 
             />
     </LinearLayout>
     <LinearLayout
@@ -44,14 +45,14 @@
 
         </TextView>
         <ProgressBar
-            android:id="@+id/intelligence"
+            android:id="@+id/intelligenceProgressBar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:max="100"
             android:progress="50"
-            android:background="#6EFFB300"
+            android:background="#33FFB300"
             android:progressTint="#FFB300"
             />
     </LinearLayout>
@@ -69,14 +70,14 @@
 
         </TextView>
         <ProgressBar
-            android:id="@+id/speed"
+            android:id="@+id/speedProgressBar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:max="100"
             android:progress="50"
-            android:background="#730048FF"
+            android:background="#470048FF"
             android:progressTint="#0048FF"
             />
     </LinearLayout>
@@ -94,14 +95,14 @@
 
         </TextView>
         <ProgressBar
-            android:id="@+id/durability"
+            android:id="@+id/durabilityProgressBar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:max="100"
             android:progress="50"
-            android:background="#6A6FFF00"
+            android:background="#406FFF00"
             android:progressTint="#6FFF00"
             />
     </LinearLayout>
@@ -109,7 +110,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"><!--"-->
+        android:orientation="horizontal">
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -120,14 +121,14 @@
 
         </TextView>
         <ProgressBar
-            android:id="@+id/power"
+            android:id="@+id/powerProgressBar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:max="100"
             android:progress="50"
-            android:background="#70FA7E01"
+            android:background="#48FA7E01"
             android:progressTint="#FA7E01"
             />
     </LinearLayout><LinearLayout
@@ -144,7 +145,7 @@
 
     </TextView>
     <ProgressBar
-        android:id="@+id/combat"
+        android:id="@+id/combatProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
