@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">LeagueOfHeroes</string>
+    <string name="app_name">League OF Heroes</string>
     <string name="hero_name">hero_name</string>
     <string name="action_search">Search</string>
 
+    <string name="action_biography">Biography</string>
+    <string name="action_appearance">Appearance</string>
+    <string name="action_stats">Stats</string>
 </resources>

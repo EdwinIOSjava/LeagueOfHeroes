@@ -7,4 +7,50 @@
     android:layout_height="match_parent"
     tools:context=".activities.DetailActivity">
 
+    <ImageView
+        android:id="@+id/heroImageView"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="-32dp"
+        android:layout_marginBottom="-32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heroImageView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/navigationBarDatail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:menu="@menu/menu_activity_navigation_bar_datail" />
+
+
+            <include
+                android:id="@+id/biography_content_detail"
+                layout="@layout/content_biography" />
+
+            <include
+                android:id="@+id/appearance_content_detail"
+                layout="@layout/content_appearance" />
+
+            <include
+                android:id="@+id/stats_content_detail"
+                layout="@layout/content_stats" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

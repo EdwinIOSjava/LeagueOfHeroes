@@ -14,6 +14,7 @@ import com.example.leagueofheroes.R
 import com.example.leagueofheroes.adapters.SuperHeroAdapter
 import com.example.leagueofheroes.data.SuperHero
 import com.example.leagueofheroes.data.SuperheroService
+import com.example.leagueofheroes.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,25 +23,24 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
     //creo las variables para poder acceder a ellas desde cualquier parte del codigo
-    lateinit var recyclerView: RecyclerView
     lateinit var adapter: SuperHeroAdapter
+    lateinit var binding: ActivityMainBinding
+
     // creamos una lista de superheroes vacia para poder llenarla con los resultados de la API
     var superheroList: List<SuperHero> = listOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        // le doy valores a las variables accediento por el ID a sus respectivos componentes
-        initComponents()
-        //  initListeners()
-
-        recyclerView = findViewById(R.id.recyclerView)
 
         adapter = SuperHeroAdapter(superheroList) { position ->
             val superhero = superheroList[position]
@@ -50,8 +50,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = GridLayoutManager(this, 2)
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = GridLayoutManager(this, 2)
 
         searchSuperheroesByName("b")
 
@@ -79,10 +79,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun initComponents() {
-        //variable=find..<[tipoDeComponente]>(direccion donde se encuentra el  comoponente ej: R.id. XXXX
-        recyclerView=findViewById<RecyclerView>(R.id.recyclerView)
-    }
+
 
     // usamos retrofit para hacer la peticion a la API
     fun getRetrofit(): SuperheroService {
@@ -95,9 +92,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun initListeners() {
 
-    }
     // usamos corrutinas para hacer la peticion a la API y mostrar los resultados en el RV
     fun searchSuperheroesByName(query: String) {
         CoroutineScope(Dispatchers.IO).launch {
