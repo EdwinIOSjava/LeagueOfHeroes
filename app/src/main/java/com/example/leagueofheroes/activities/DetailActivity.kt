@@ -92,7 +92,7 @@ class DetailActivity : AppCompatActivity() {
         binding.appearanceContentDetail.heightTextView.text = superhero.appearance.getHeightCm()
 
         // Stats
-        binding.statsContentDetail.strengthProgressBar.progress=superhero.powerstats.strength
+        binding.statsContentDetail.strengthProgressBar.progress=superhero.powerstats.strength.toInt()
 
     }
 
